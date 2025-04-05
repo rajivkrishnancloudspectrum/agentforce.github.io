@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    
     <title>Salesforce Embedded Messaging</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/path/to/favicon.ico">
+
     <style>
-        /* CSS to set the background image */
         body {
-            background-image: url('add.png'); /* Ensure this path is correct */
+            background-image: url('add.png'); /* Ensure the path is correct */
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -17,29 +22,27 @@
         }
     </style>
 </head>
-<link rel="icon" type="image/x-icon" href="/path/to/favicon.ico">
 <body>
-    <!-- Content of your page goes here -->
-
     <!-- Salesforce Embedded Messaging Scripts -->
-    <script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+    <script type="text/javascript">
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US';
 
-			embeddedservice_bootstrap.init(
-				'00DgL000001egHj',
-				'Autoaddress_Web_Chat',
-				'https://orgfarm-470f9b0344-dev-ed.develop.my.site.com/ESWAutoaddressWebChat1743844909817',
-				{
-					scrt2URL: 'https://orgfarm-470f9b0344-dev-ed.develop.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-    <script type='text/javascript' src='https://orgfarm-470f9b0344-dev-ed.develop.my.site.com/ESWAutoaddressWebChat1743844909817/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-    </body>
+                embeddedservice_bootstrap.init(
+                    '00DgL000001egHj',
+                    'Autoaddress_Web_Chat',
+                    'https://orgfarm-470f9b0344-dev-ed.develop.my.site.com/ESWAutoaddressWebChat1743844909817',
+                    {
+                        scrt2URL: 'https://orgfarm-470f9b0344-dev-ed.develop.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        }
+    </script>
+    
+    <script type="text/javascript" src="https://orgfarm-470f9b0344-dev-ed.develop.my.site.com/ESWAutoaddressWebChat1743844909817/assets/js/bootstrap.min.js" onload="initEmbeddedMessaging()"></script>
+</body>
 </html>
