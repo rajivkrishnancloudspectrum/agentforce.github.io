@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Embedded Messaging</title>
+    <style>
+        /* CSS to set the background image */
+        body {
+            background-image: url('add.png'); /* Replace with your image path */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Content of your page goes here -->
+
+    <!-- Salesforce Embedded Messaging Scripts -->
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US'; // Set language
+
+                embeddedservice_bootstrap.init(
+                    '00DgL000001egHj',
+                    'Autoaddress_Web_Chat',
+                    'https://orgfarm-470f9b0344-dev-ed.develop.my.site.com/ESWAutoaddressWebChat1743844909817',
+                    {
+                        scrt2URL: 'https://orgfarm-470f9b0344-dev.develop.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://orgfarm-470f9b0344-dev-ed.develop.my.site.com/ESWAutoaddressWebChat1743844909817/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+</body>
+</html>
